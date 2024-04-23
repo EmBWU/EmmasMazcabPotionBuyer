@@ -25,13 +25,14 @@ class KotlinSkeleton(
     name: String,
     scriptConfig: ScriptConfig,
     scriptDefinition: ScriptDefinition
-) : LoopingScript (name, scriptConfig, scriptDefinition) {
+) : LoopingScript(name, scriptConfig, scriptDefinition) {
 
     private val random: Random = Random()
     var botState: BotState = BotState.IDLE
     val clickedPotions: MutableList<MazcabPotions> = mutableListOf()
-    val shopPosition = Coordinate(4376,787,0)
+    val shopPosition = Coordinate(4376, 787, 0)
     var timeRemaining: Long = 0
+
     enum class BotState {
         //define your bot states here
         IDLE,
@@ -50,7 +51,7 @@ class KotlinSkeleton(
     override fun onLoop() {
         val player = Client.getLocalPlayer()
         if (Client.getGameState() != Client.GameState.LOGGED_IN || player == null || botState == BotState.IDLE) {
-            Execution.delay(random.nextLong(2500,5500))
+            Execution.delay(random.nextLong(2500, 5500))
             return
         }
         when (botState) {
@@ -58,22 +59,27 @@ class KotlinSkeleton(
                 Execution.delay(handleThinking(player))
                 return
             }
+
             BotState.BANKING -> {
                 Execution.delay(handleBanking(player))
                 return
             }
+
             BotState.IDLE -> {
                 println("We're idle!")
-                Execution.delay(random.nextLong(1500,5000))
+                Execution.delay(random.nextLong(1500, 5000))
             }
+
             BotState.MOVING -> {
                 Execution.delay(handleMoving(player))
                 return
             }
+
             BotState.BUYING -> {
                 Execution.delay(handleBuying(player))
                 return
             }
+
             else -> {
                 println("Unexpected bot state, report to author!")
             }
@@ -100,12 +106,11 @@ class KotlinSkeleton(
 
 
     private fun handleBanking(player: LocalPlayer): Long {
-        if (Bank.isOpen()){
+        if (Bank.isOpen()) {
             Bank.loadPreset(1)
             botState = BotState.THINKING
             return random.nextLong(1500, 3000)
-        }
-        else {
+        } else {
             if (getMerchant() != null)
                 getMerchant()?.interact("Bank")
             else
@@ -114,7 +119,7 @@ class KotlinSkeleton(
         return random.nextLong(1500, 3000)
     }
 
-    private fun getMerchant (): Npc? {
+    private fun getMerchant(): Npc? {
         return NpcQuery.newQuery().name("Goebie supplier").results().firstOrNull()
     }
 
@@ -124,8 +129,7 @@ class KotlinSkeleton(
             if (shop != null) {
                 shop.interact("Shop")
                 Execution.delay(random.nextLong(1000, 3000))
-            }
-            else {
+            } else {
                 println("No shop found")
             }
         } else {
@@ -143,11 +147,11 @@ class KotlinSkeleton(
                 MiniMenu.interact(ComponentAction.COMPONENT.type, 1, -1, 82903257)
                 botState = BotState.THINKING
                 timeRemaining = System.currentTimeMillis() + 2 * 60 * 1000
-                Execution.delay(random.nextLong(500, 1000))
+                return random.nextLong(1500, 3000)
             }
         }
 
-            return random.nextLong(1500, 3000)
+        return random.nextLong(1500, 3000)
     }
 
     private fun handleThinking(player: LocalPlayer): Long {
@@ -155,7 +159,7 @@ class KotlinSkeleton(
             botState = BotState.MOVING
             return random.nextLong(1500, 3000)
         }
-        if (Backpack.isFull() || timeRemaining > System.currentTimeMillis() && !Backpack.isEmpty()){
+        if (Backpack.isFull() || timeRemaining > System.currentTimeMillis() && !Backpack.isEmpty()) {
             botState = BotState.BANKING
             return random.nextLong(1500, 3000)
         }
