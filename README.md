@@ -1,17 +1,40 @@
-### BotWithUs Kotlin Skeleton
-This IntelliJ Gradle project shows you the basic setup to get started scripting with Java. Other IDEs are possible, but this project is an IntelliJ IDEA project.
+# Emma Mazcab Potion Buyer
 
-### Description
-- This is an extremely barebones example meant to get you only the bare minimum to start writing a script.
-- While you dont have to follow the state structure provided, a suitable alternative is recommended if you dont.
+This is a Kotlin-based project that automates the process of buying potions in the game Mazcab.
 
-### Info
-- You'll find the script itself located at ``src/main/java/net/botwithus/KotlinSkeleton.kt``
-- You'll find the graphics context (which allows you to draw UI with ImGui) at ``src/main/java/net/botwithus/KotlinSkeletonGraphicsContext.kt``
-- If you're having any trouble, speak up in the public-scripters channel on discord!
+## Getting Started
 
-### After downloading/copying
-- You should change your project name in ``settings.gradle.kts``
-- You should make sure gradle is configured with JDK 20 (OpenJDK or Corretto) ``File > Settings > Build, Execution, Deployment > Build Tools > Gradle``
-- Rename the script and graphics context to something appropriate.
-- Update script.ini to relevant info
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+What things you need to install the software and how to install them:
+
+- IntelliJ IDEA 2023.3.6
+- Java Development Kit (JDK)
+- Gradle
+
+### Installing
+
+A step by step series of examples that tell you how to get a development environment running:
+
+1. Clone the repository
+2. Open the project in IntelliJ IDEA
+3. Build the project using Gradle
+
+## Built With
+
+- [Kotlin](https://kotlinlang.org/)
+- [Java](https://www.java.com/)
+- [Gradle](https://gradle.org/)
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+- **Emma** - *Initial work* - [EmBWU](https://github.com/EmBWU)
+
+See also the list of [contributors](https://github.com/EmBWU/EmmasMazcabPotionBuyer/contributors) who participated in this project.
+
