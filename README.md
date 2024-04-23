@@ -1,6 +1,6 @@
 # Emma Mazcab Potion Buyer
 
-This is a Kotlin-based project that automates the process of buying potions in the game Mazcab.
+This is a Kotlin-based project that automates the process of buying potions at the Mazcab Potion supplier.
 
 ## Getting Started
 
