@@ -14,14 +14,42 @@ What things you need to install the software and how to install them:
 - Java Development Kit (JDK)
 - Gradle
 
-### Installing
 
-A step by step series of examples that tell you how to get a development environment running:
+### Installation Guide
 
-1. Clone the repository
-2. Open the project in IntelliJ IDEA
-3. Build the project using Gradle
+To prepare the environment and start using the Emma's Mazcab Potion Buyer, follow these steps:
 
+
+#### Option 1: Building from Source
+
+
+Clone the Repository: Clone the repository to your local machine using your favorite Git client or the command line:
+
+```sh
+
+git clone https://github.com/EmBWU/EmmasMazcabPotionBuyer
+```
+Open the Project: Open the cloned project in IntelliJ IDEA by selecting "Open" and navigating to the project directory.
+
+
+Build the Project: Use Gradle to build the project. This can be done within IntelliJ IDEA using the 'Gradle' panel and executing the build task.
+
+
+
+### Option 2: Using a Pre-built Jar
+
+If you prefer not to build the project yourself, you can use a pre-built jar file. Here’s how:
+
+
+Navigate to the Releases section of the project's GitHub page.
+
+Download the latest .jar file.
+
+Copy the .jar file to the following directory on your local machine:  
+```sh 
+C:\Users\<YourUsername>\BotWithUs\scripts\local
+```
+Replace <YourUsername> with your actual Windows username.
 ## Built With
 
 - [Kotlin](https://kotlinlang.org/)
